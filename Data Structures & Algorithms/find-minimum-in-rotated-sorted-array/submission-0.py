@@ -1,0 +1,14 @@
+class Solution:
+    def findMin(self, nums: List[int]) -> int:
+        ### find rotation
+        i=0
+        j=len(nums)-1
+        while i<j:
+            mid=i+(j-i)//2
+            if nums[j]>nums[mid]:
+                j=mid
+            else:
+                i=mid+1
+        return nums[i]
+
+        
